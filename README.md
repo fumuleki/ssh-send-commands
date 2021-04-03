@@ -1,6 +1,6 @@
 # ssh-send-commands
 
-Le script a pour but d'automatiser certaine tache de distributions des clés SSH, et envoyer des commandes via SSH aux nombreuses machines du réseau, et si l'utilisateur a besoin d'accéder aux machines, cela pourrait être facile, car le script ajoutera toutes les informations requises à .ssh / config.
+Le script a pour but d'automatiser certaines taches de partages des clés SSH, et envoyer des commandes via SSH aux nombreuses machines ou serveurs du réseau, et si l'utilisateur a besoin d'accéder aux machines, cela pourrait être facile, car le script ajoutera toutes les informations requises à .ssh / config.
 
 # Scénario
 Si la solution de sécurité échoue, l'administrateur système utilisera le script pour automatiser la distribution des clés SSH pour toutes les machines du réseau et permettra à l'administrateur de SSH -t complètement la machine spécifique accompagnée des autorisations root.
