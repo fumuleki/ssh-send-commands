@@ -1,9 +1,6 @@
 # ssh-send-commands
 
-Le script a pour but d'automatiser certaines taches d'outil ssh pour partages des clés SSH, et envoyer des commandes via SSH aux nombreuses machines ou serveurs du réseau, et si l'utilisateur a besoin d'accéder aux machines, cela pourrait être facile, car le script ajoutera toutes les informations requises à .ssh / config.
-
-# Scénario
-Si la solution de sécurité échoue, l'administrateur système utilisera le script pour automatiser la distribution des clés SSH pour toutes les machines du réseau et permettra à l'administrateur de SSH -t complètement la machine spécifique accompagnée des autorisations root.
+Le script a pour but d'automatiser certaines taches d'outil ssh, montrant comment utiliser le script python pour automatiser l'envoi de l'ID publique ssh, ajouter des machines à ssh / config qui est notre fichier de configuration ssh et envoyer des commandes via SSH a des nombreuses machines du réseau. Si l'utilisateur a besoin d'accéder aux serveurs, cela pourrait être facile, car le script ajoutera toutes les informations requises à fichier .ssh / config, pour s'authentifier sans mot de passe en utilisant seulement les clés ssh partager.
 
 #!/usr/bin/env python3
 
@@ -102,3 +99,9 @@ script, filename = argv
     except KeyboardInterrupt:    
                   config.close()
     atexit.register(exit_handler)
+
+# Scénario
+Si la solution de sécurité échoue, l'administrateur système utilisera le script pour automatiser la distribution des clés SSH pour toutes les machines du réseau et permettra à l'administrateur d'accéder facilement aux serveurs du réseau pour envoyer des commandes en utilisant de SSH -t  machine spécifique accompagnée des autorisations root.
+
+
+
