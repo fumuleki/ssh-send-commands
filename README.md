@@ -1,6 +1,6 @@
 # ssh-send-commands
 
-Le script a pour but d'automatiser certaines taches d'outil ssh, montrant comment utiliser le script python pour automatiser l'envoi de l'ID publique ssh, ajouter des machines à ssh / config qui est notre fichier de configuration ssh et envoyer des commandes via SSH a des nombreuses machines du réseau. Si l'utilisateur a besoin d'accéder aux serveurs, cela pourrait être facile, car le script ajoutera toutes les informations requises à fichier .ssh / config, pour s'authentifier sans mot de passe en utilisant seulement les clés ssh partager.
+Le script a pour but d'automatiser une tache qui ajouter des machines (serveurs) distantes du reseau dans un fichier de configuration SSH (.ssh/config), permettra a l'administrateur système de bien gérer la connexions SSH pour la connexion à distance sécurisée, et envoyer des commandes via SSH vers des nombreuses machines distantes du réseau. Si l'utilisateur a besoin d'accéder aux serveurs, cela pourrait être facile, car le script ajoutera toutes les informations requises à fichier .ssh / config, pour s'authentifier sans mot de passe en utilisant seulement les clés ssh partager.
 
 #!/usr/bin/env python3
 
@@ -12,7 +12,7 @@ Le script a pour but d'automatiser certaines taches d'outil ssh, montrant commen
 
 script, filename = argv
 
-# Créer un dossier .ssh
+# Créer un repertoire .ssh
 
     - if not os.path.exists(".ssh"):
         os.makedirs(".ssh")
