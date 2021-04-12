@@ -6,11 +6,8 @@ Le script a pour but d'automatiser une tache qui ajouter des machines (serveurs)
 
 # Importer Modules
 
-    - from sys import argv
-     - import atexit
      - import os
-
-script, filename = argv
+     - import subprocess
 
 # Créer un repertoire .ssh
 
