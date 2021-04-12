@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 
-from sys import argv
-import atexit
 import os
+import subprocess
 
-script, filename = argv
+filename = ".ssh/config"
 
 if not os.path.exists(".ssh"):
     os.makedirs(".ssh")
