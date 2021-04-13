@@ -12,8 +12,9 @@ Le code suivant montre comment une fonction est enregistrée pour une exécution
 
 # Importer Modules
 
-     - import os
-     - import subprocess
+       from sys import argv
+       import atexit
+       import os
 
 # Créer un repertoire .ssh
 
