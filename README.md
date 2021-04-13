@@ -2,6 +2,12 @@
 
 Le script a pour but d'automatiser une tache qui ajouter des machines (serveurs) distantes du reseau dans un fichier de configuration SSH (.ssh/config), permettra a l'administrateur système de bien gérer la connexions SSH pour la connexion à distance sécurisée, et envoyer des commandes via SSH vers des nombreuses machines distantes du réseau. Si l'utilisateur a besoin d'accéder aux serveurs, cela pourrait être facile, car le script ajoutera toutes les informations requises à fichier .ssh / config, pour s'authentifier sans mot de passe en utilisant seulement les clés ssh partager.
 
+Le module atexit dans la distribution standard de Python a deux fonctions - register () et unregister (). Les deux fonctions prennent une fonction existante comme argument. Les fonctions enregistrées sont exécutées automatiquement lorsque la session d'interprétation se termine normalement. Si plusieurs fonctions sont enregistrées, leur exécution s'effectue dans l'ordre inverse de l'enregistrement. Cela signifie que les fonctions f1 (), f2 () et f3 () sont enregistrées l'une après l'autre, leur ordre d'exécution sera f3 (), f2 () et f1 ().
+
+La fonction unregister () supprime la fonction spécifiée de la liste des fonctions à appeler automatiquement.
+
+Le code suivant montre comment une fonction est enregistrée pour une exécution automatique à la fin du code. Le programme demande à un utilisateur de saisir des nombres successivement et les ajoute. Lorsque la boucle est terminée, la fonction exit_handler s'enregistrée () est appelée automatiquement pour enregistrer l'ajout dans un fichier(config).
+
 #!/usr/bin/env python3
 
 # Importer Modules
@@ -96,6 +102,8 @@ Le script a pour but d'automatiser une tache qui ajouter des machines (serveurs)
     except KeyboardInterrupt:    
                   config.close()
     atexit.register(exit_handler)
+
+Enregistrez le code ci-dessus sous auto_ssh.py et exécutez à partir de la ligne de commande. Les nombres successifs saisis sont ajoutés dans le fichier(config) à la fin. Le fichier config sera créé dans le répertoire .ssh
 
 # Scénario
 Si la solution de sécurité échoue, l'administrateur système utilisera le script pour automatiser la distribution des clés SSH pour toutes les machines du réseau et permettra à l'administrateur d'accéder facilement aux serveurs du réseau pour envoyer des commandes en utilisant de SSH -t  machine spécifique accompagnée des autorisations root.
